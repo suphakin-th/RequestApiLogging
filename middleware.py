@@ -28,10 +28,10 @@ class RequestMiddleware:
         else:
             request.IS_API = False
 
-        if request.IS_API:
-            # Check request is already authen
-            if not request.user.is_authenticated:
-                return HttpResponse(status=401)
+        # if request.IS_API:
+        #     # Check request is already authen
+        #     if not request.user.is_authenticated:
+        #         return HttpResponse(status=401)
 
         response = self.get_response(request)
         return response
